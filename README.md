@@ -28,7 +28,11 @@ An apple is a sweet, edible fruit produced by an apple tree (*Malus pumila*). -[
 
 ## YAML Front Matter
 
-The majority of your product information will be set as [YAML front matter](http://assemble.io/docs/YAML-front-matter.html). There are no required properties, but a minimum of `name` and `id` are recommended.
+The majority of your product information will be set as [YAML front matter](http://assemble.io/docs/YAML-front-matter.html). There are no required properties, but a minimum of `id` is recommended.
+
+## ID Property
+
+There aren't any requirements for formatting your ID, but you should try to keep the business logic for your IDs case insensitive. Transformations to upper or lower case should happen before any API calls or rendering.
 
 ## Variant Products
 
