@@ -26,7 +26,9 @@ An apple is a sweet, edible fruit produced by an apple tree (*Malus pumila*). -[
 
 ```
 
-## Front Matter
+## YAML Front Matter
+
+The majority of your product information will be set as [YAML front matter](http://assemble.io/docs/YAML-front-matter.html). There are no required properties, but a minimum of `name` and `id` are recommended.
 
 ## Variant Products
 
@@ -41,7 +43,7 @@ If an alternate property isn't supplied in the variant object, it will assume th
 	"color": "red",
 	"description": "An apple.",
 	"price": 0.99,
-	"body": "An apple is a sweet...",
+	"body": "<p>An apple is a sweet...",
 	"variant": false
 }
 {
@@ -50,7 +52,7 @@ If an alternate property isn't supplied in the variant object, it will assume th
 	"color": "green",
 	"description": "An apple.",
 	"price": 0.99,
-	"body": "An apple is a sweet...",
+	"body": "<p>An apple is a sweet...",
 	"variant": true
 }
 {
@@ -59,7 +61,7 @@ If an alternate property isn't supplied in the variant object, it will assume th
 	"color": "green",
 	"description": "A gross apple.",
 	"price": 0.01,
-	"body": "An apple is a sweet...",
+	"body": "<p>An apple is a sweet...",
 	"variant": true
 }
 ```
@@ -69,6 +71,13 @@ If an alternate property isn't supplied in the variant object, it will assume th
 File paths and names should never be important to the application logic and should only named appropriately for the convenience of the developer. This makes it easier to organize product files as the project scales.
 
 Applications should always recursively search for product markdown files so the folder structure can change and be as deep as it needs to be.
+
+## Reserved Properties
+
+While these properties can be used in your YML, they will likely be overwritten when the product objects are unpacked.
+
+- `body`: (String) This will always unpack as the markdown content transpiled to HTML.
+- `variant`: (Boolean) Used for identifying whether or not a product originated as a variant.
 
 ## Why Markdown?
 
